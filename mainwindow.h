@@ -6,10 +6,13 @@
 #include <QListWidgetItem>
 #include <QTimer>
 #include <QTime>
+#include <QFile>
+#include <QTime>
 #include "musicitem.h"
 #include "fetchyoutube.h"
 #include "webhost.h"
 #include "musicdetail.h"
+#include "timedetail.h"
 #include "player.h"
 
 namespace Ui {
@@ -45,9 +48,12 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QList<musicItem*>musicList;
+    QList<QTime>startTimeList;
+    QList<QTime>endTimeList;
     player *players;
     QTimer *clockSync;
     QTime *time;
+    QFile file;
     void disableButtons();
 };
 

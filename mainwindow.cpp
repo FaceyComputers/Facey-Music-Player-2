@@ -96,7 +96,10 @@ void MainWindow::on_stopButton_clicked()
     disableButtons();
 }
 
-void MainWindow::on_addTimeButton_clicked()
+void MainWindow::on_addTimeButton_clicked() //https://stackoverflow.com/questions/29571205/error-lnk2019-unresolved-external-symbol-c-in-qt-platform
 {
-
+    timeDetail getDetail;
+    getDetail.exec();
+    //startTimeList.append(getDetail.getStartTime());
+    //endTimeList.append(getDetail.getEndTime());
 }

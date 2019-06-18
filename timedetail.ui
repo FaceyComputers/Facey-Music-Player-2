@@ -15,10 +15,10 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">
-    <widget class="QTimeEdit" name="timeEdit"/>
+    <widget class="QTimeEdit" name="startTime"/>
    </item>
    <item row="4" column="0">
-    <widget class="QTimeEdit" name="timeEdit_2"/>
+    <widget class="QTimeEdit" name="endTime"/>
    </item>
    <item row="5" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -40,14 +40,14 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Start Time</string>
+      <string>Start Time:</string>
      </property>
     </widget>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>End Time</string>
+      <string>End Time:</string>
      </property>
     </widget>
    </item>

@@ -2,6 +2,7 @@
 #define TIMEDETAIL_H
 
 #include <QDialog>
+#include <QTime>
 
 namespace Ui {
 class timeDetail;
@@ -14,6 +15,16 @@ class timeDetail : public QDialog
 public:
     explicit timeDetail(QWidget *parent = nullptr);
     ~timeDetail();
+
+    void setTime(QTime start, QTime end);
+
+    void setStartTime(QTime time);
+
+    void setEndTime(QTime time);
+
+    QTime getStartTime();
+
+    QTime getEndTime();
 
 private:
     Ui::timeDetail *ui;
