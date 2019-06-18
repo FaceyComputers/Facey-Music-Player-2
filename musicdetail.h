@@ -15,6 +15,10 @@ public:
     explicit musicDetail(QWidget *parent = nullptr);
     ~musicDetail();
 
+    QString getName();
+    QString getURL();
+    void setName(QString text);
+    void setURL(QString text);
 private:
     Ui::musicDetail *ui;
 };

@@ -15,10 +15,10 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="0" colspan="2">
      <widget class="QTabWidget" name="mainWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="mainTab">
        <attribute name="title">
@@ -27,6 +27,9 @@
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="1" column="1">
          <widget class="QPushButton" name="removeButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>Remove</string>
           </property>
@@ -34,6 +37,9 @@
         </item>
         <item row="1" column="2">
          <widget class="QPushButton" name="editButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>Edit</string>
           </property>
@@ -41,6 +47,9 @@
         </item>
         <item row="1" column="3">
          <widget class="QPushButton" name="moveButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="text">
            <string>Move</string>
           </property>
@@ -66,7 +75,7 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="generalTab">
            <attribute name="title">
@@ -78,29 +87,29 @@
             <string>Schedule</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_4">
+            <item row="1" column="2">
+             <widget class="QPushButton" name="editTimeButton">
+              <property name="text">
+               <string>Edit</string>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="addTimeButton">
               <property name="text">
                <string>Add</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="removeTimeButton">
               <property name="text">
                <string>Remove</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="2">
-             <widget class="QPushButton" name="pushButton_3">
-              <property name="text">
-               <string>Edit</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="0" colspan="3">
-             <widget class="QTableView" name="scheduleTable"/>
+             <widget class="QListWidget" name="scheduleList"/>
             </item>
            </layout>
           </widget>
@@ -113,6 +122,26 @@
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="stopButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="playButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Play</string>
+      </property>
      </widget>
     </item>
    </layout>

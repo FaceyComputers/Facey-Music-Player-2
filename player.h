@@ -27,6 +27,7 @@ private:
     QWebEnginePage *playerPage;
     QString url;
     int volume;
+    QString seperateLink(QString url);
 };
 
 #endif // PLAYER_H

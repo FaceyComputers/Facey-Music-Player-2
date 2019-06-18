@@ -33,7 +33,8 @@ SOURCES += \
     musicdetail.cpp \
     musicitem.cpp \
     player.cpp \
-    webhost.cpp
+    webhost.cpp \
+    timedetail.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,11 +42,13 @@ HEADERS += \
     musicdetail.h \
     musicitem.h \
     player.h \
-    webhost.h
+    webhost.h \
+    timedetail.h
 
 FORMS += \
         mainwindow.ui \
-        musicdetail.ui
+        musicdetail.ui \
+    timedetail.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
