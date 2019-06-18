@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT += network
+QT += webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,17 +30,22 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     fetchyoutube.cpp \
+    musicdetail.cpp \
     musicitem.cpp \
+    player.cpp \
     webhost.cpp
 
 HEADERS += \
         mainwindow.h \
     fetchyoutube.h \
+    musicdetail.h \
     musicitem.h \
+    player.h \
     webhost.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        musicdetail.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

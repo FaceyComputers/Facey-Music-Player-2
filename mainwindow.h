@@ -2,9 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWebEngineView>
 #include "musicitem.h"
 #include "fetchyoutube.h"
 #include "webhost.h"
+#include "musicdetail.h"
+#include "player.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +20,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_addButton_clicked();
 
 private:
     Ui::MainWindow *ui;

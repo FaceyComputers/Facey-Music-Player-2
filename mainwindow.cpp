@@ -12,3 +12,14 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_addButton_clicked()
+{
+    /*musicDetail getDetail;
+    getDetail.exec();
+    musicItem *music = new musicItem();*/
+
+    player *media = new player(this);
+    media->play();
+}
+
