@@ -19,6 +19,7 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -34,7 +35,7 @@ SOURCES += \
     musicitem.cpp \
     player.cpp \
     webhost.cpp \
-    timedetail.cpp
+    scheduledetail.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,14 +44,21 @@ HEADERS += \
     musicitem.h \
     player.h \
     webhost.h \
-    timedetail.h
+    scheduledetail.h
 
 FORMS += \
         mainwindow.ui \
         musicdetail.ui \
-    timedetail.ui
+    timedetail.ui \
+    scheduledetail.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../TreeFrog/1.20.0/bin/ -ltreefrog1
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../TreeFrog/1.20.0/bin/ -ltreefrog1d
+
+INCLUDEPATH += $$PWD/../../../../TreeFrog/1.20.0/bin
+DEPENDPATH += $$PWD/../../../../TreeFrog/1.20.0/bin

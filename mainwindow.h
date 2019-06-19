@@ -8,12 +8,13 @@
 #include <QTime>
 #include <QFile>
 #include <QTime>
+#include "scheduledetail.h"
 #include "musicitem.h"
 #include "fetchyoutube.h"
 #include "webhost.h"
 #include "musicdetail.h"
-#include "timedetail.h"
 #include "player.h"
+
 
 namespace Ui {
 class MainWindow;

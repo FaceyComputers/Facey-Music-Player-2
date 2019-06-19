@@ -1,33 +1,28 @@
-#ifndef TIMEDETAIL_H
-#define TIMEDETAIL_H
+#ifndef SCHEDULEDETAIL_H
+#define SCHEDULEDETAIL_H
 
 #include <QDialog>
 #include <QTime>
 
 namespace Ui {
-class timeDetail;
+class scheduleDetail;
 }
 
-class timeDetail : public QDialog
+class scheduleDetail : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit timeDetail(QWidget *parent = nullptr);
-    ~timeDetail();
+    explicit scheduleDetail(QWidget *parent = nullptr);
+    ~scheduleDetail();
 
     void setTime(QTime start, QTime end);
-
     void setStartTime(QTime time);
-
     void setEndTime(QTime time);
-
     QTime getStartTime();
-
     QTime getEndTime();
-
 private:
-    Ui::timeDetail *ui;
+    Ui::scheduleDetail *ui;
 };
 
-#endif // TIMEDETAIL_H
+#endif // SCHEDULEDETAIL_H

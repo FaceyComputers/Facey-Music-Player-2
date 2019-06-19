@@ -38,13 +38,24 @@ void MainWindow::updateUiList()
     {
         delete ui->musicList->takeItem(a);
     }
+    for(int a = 0; a < this->startTimeList.size(); a++)
+    {
+        delete ui->scheduleList->takeItem(a);
+    }
+
     ui->musicList->clear();
+    ui->scheduleList->clear();
 
     for(int a = 0; a < this->musicList.size(); a++) //Adds to the list
     {
         QListWidgetItem *widgets = new QListWidgetItem(this->musicList.at(a)->getName());
         widgets->setToolTip(this->musicList.at(a)->getURL());
         ui->musicList->addItem(widgets);
+    }
+    for(int a = 0; a < this->startTimeList.size(); a++) //Adds to the list
+    {
+        QListWidgetItem *widgets = new QListWidgetItem(this->startTimeList.at(a).toString("hh:ms") + " - " + this->endTimeList.at(a).toString("hh:ms"));
+        ui->scheduleList->addItem(widgets);
     }
 }
 
@@ -94,12 +105,14 @@ void MainWindow::on_stopButton_clicked()
 {
     players->stop();
     disableButtons();
+
 }
 
 void MainWindow::on_addTimeButton_clicked() //https://stackoverflow.com/questions/29571205/error-lnk2019-unresolved-external-symbol-c-in-qt-platform
 {
-    timeDetail getDetail;
+    scheduleDetail getDetail;
     getDetail.exec();
-    //startTimeList.append(getDetail.getStartTime());
-    //endTimeList.append(getDetail.getEndTime());
+    startTimeList.append(getDetail.getStartTime());
+    endTimeList.append(getDetail.getEndTime());
+    updateUiList();
 }
