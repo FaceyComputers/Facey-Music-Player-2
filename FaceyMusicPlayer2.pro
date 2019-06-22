@@ -30,21 +30,21 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    fetchyoutube.cpp \
     musicdetail.cpp \
     musicitem.cpp \
     player.cpp \
     webhost.cpp \
-    scheduledetail.cpp
+    scheduledetail.cpp \
+    filemanager.cpp
 
 HEADERS += \
         mainwindow.h \
-    fetchyoutube.h \
     musicdetail.h \
     musicitem.h \
     player.h \
     webhost.h \
-    scheduledetail.h
+    scheduledetail.h \
+    filemanager.h
 
 FORMS += \
         mainwindow.ui \
@@ -57,8 +57,3 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../TreeFrog/1.20.0/bin/ -ltreefrog1
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../TreeFrog/1.20.0/bin/ -ltreefrog1d
-
-INCLUDEPATH += $$PWD/../../../../TreeFrog/1.20.0/bin
-DEPENDPATH += $$PWD/../../../../TreeFrog/1.20.0/bin

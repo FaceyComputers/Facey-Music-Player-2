@@ -18,16 +18,24 @@ public:
     void setVolume(int volume);
     void stop();
     void pause();
-
-
+    void checkURL();
+    //QTime getTimeStamp();
+    double getTimeStamp();
+    double getLength();
 private slots:
     void loaded();
+signals:
+    void nameChanged(QString);
 private:
     QWebEngineView *playerView;
     QWebEnginePage *playerPage;
     QString url;
     int volume;
+    double currentTime;
+    double currentLength;
     QString seperateLink(QString url);
+    void setCurrentTime(double time);
+    void setCurrentLength(double time);
 };
 
 #endif // PLAYER_H

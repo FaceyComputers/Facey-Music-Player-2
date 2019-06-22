@@ -14,15 +14,31 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Music Name:</string>
+   <item row="7" column="0">
+    <widget class="QSlider" name="horizontalSlider">
+     <property name="value">
+      <number>49</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
    <item row="2" column="0">
     <widget class="QLineEdit" name="nameEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="toolTip">
       <string/>
      </property>
@@ -40,36 +56,20 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="QSlider" name="horizontalSlider">
-     <property name="value">
-      <number>49</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <pointsize>26</pointsize>
-       <underline>true</underline>
-      </font>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="enabled">
+      <bool>false</bool>
      </property>
      <property name="text">
-      <string>Add Music</string>
+      <string>Music Name:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Volume:</string>
      </property>
     </widget>
    </item>
@@ -87,10 +87,23 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_4">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+       <underline>true</underline>
+      </font>
+     </property>
      <property name="text">
-      <string>Volume:</string>
+      <string>Add Music</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Select File</string>
      </property>
     </widget>
    </item>

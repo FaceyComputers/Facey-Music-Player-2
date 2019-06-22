@@ -6,6 +6,8 @@ musicDetail::musicDetail(QWidget *parent) :
     ui(new Ui::musicDetail)
 {
     ui->setupUi(this);
+    ui->nameEdit->setVisible(false);
+    ui->label_2->setVisible(false);
 }
 
 musicDetail::~musicDetail()

@@ -1,4 +1,5 @@
 #include "player.h"
+#include "mainwindow.h"
 
 player::player(QObject *parent) : QObject(parent)
 {
@@ -50,13 +51,58 @@ void player::play()
     playerPage->setUrl(this->url);
     playerView->setPage(playerPage);
     playerView->show();
+    playerView->setVisible(false);
+    //connect(playerView, SIGNAL(loadFinished(bool)), this, SLOT(loaded()));
+}
+
+void player::checkURL()
+{
+    playerPage->setUrl(this->url);
+    playerView->setPage(playerPage);
+    playerView->show();
+    playerView->setVisible(false);
     connect(playerView, SIGNAL(loadFinished(bool)), this, SLOT(loaded()));
+}
+
+void player::setCurrentTime(double time)
+{
+    this->currentTime = time;
+}
+
+void player::setCurrentLength(double time)
+{
+    this->currentLength = time;
+}
+
+double player::getTimeStamp()
+{
+    playerPage->runJavaScript("document.getElementById(\"movie_player\").getCurrentTime();", [&](const QVariant &v){
+        this->setCurrentTime(v.toDouble());
+    });
+    return this->currentTime;
+}
+
+double player::getLength()
+{
+    playerPage->runJavaScript("document.getElementById(\"movie_player\").getDuration();", [&](const QVariant &v){
+        this->setCurrentLength(v.toDouble());
+    });
+    return currentLength;
 }
 
 void player::loaded()
 {
+    playerView->setUrl(QUrl(NULL));
+    playerPage->setUrl(QUrl(NULL));
+    playerView->close();
+    emit nameChanged(playerView->title());
+    delete playerPage;
+    delete playerView;
+    this->playerView = new QWebEngineView();
+    this->playerPage = new QWebEnginePage();
     //playerView->page()->runJavaScript("alert(\"hello\");");
 }
+
 
 void player::setURL(QString URL)
 {
@@ -76,6 +122,7 @@ void player::setVolume(int volume)
 void player::stop()
 {
     playerView->setUrl(QUrl(""));
+    playerPage->setUrl(QUrl(""));
     playerView->close();
     playerView->stop();
 }

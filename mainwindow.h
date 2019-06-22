@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "scheduledetail.h"
 #include <QMainWindow>
 #include <QDebug>
 #include <QListWidgetItem>
@@ -8,11 +9,10 @@
 #include <QTime>
 #include <QFile>
 #include <QTime>
-#include "scheduledetail.h"
 #include "musicitem.h"
-#include "fetchyoutube.h"
 #include "webhost.h"
 #include "musicdetail.h"
+#include <iostream>
 #include "player.h"
 
 
@@ -27,11 +27,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
     void updateUiList();
 public slots:
     void timeSync();
 private slots:
+    void getTitle(QString name);
+
     void on_addButton_clicked();
 
     void on_removeButton_clicked();
@@ -55,6 +56,10 @@ private:
     QTimer *clockSync;
     QTime *time;
     QFile file;
+    QString videoName;
+    musicItem *currentItem;
+    bool isMusicPlaying;
+    int currentSong;
     void disableButtons();
 };
 
